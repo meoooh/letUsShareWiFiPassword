@@ -5,7 +5,7 @@ server "repang.net", :web, :app, :db, primary: true
  
 set :rails_env, "production" #added for delayed job
 set :application, "letUsShareWiFiPassword"
-set :user, "meoh"
+set :user, "han"
 set :deploy_to, "/home/#{user}/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -43,7 +43,7 @@ namespace :deploy do
   task :check_revision, roles: :web do
     unless `git rev-parse HEAD` == `git rev-parse origin/master`
       puts "WARNING: HEAD is not the same as origin/master"
-      puts "Run `git push` to sync cmeohges."
+      puts "Run `git push` to sync changes."
       exit
     end
   end
